@@ -1,0 +1,164 @@
+/* src/views/Search.css */
+
+/* — fonts are loaded in public/index.html — */
+
+#search-view {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1rem;
+
+  /* — background (from last tweak) — */
+  background-image: url('../assets/images/search.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 150% auto;
+  background-attachment: fixed;
+  min-height: 500px;
+
+  /* ← change: apply Pacifico “cute” font */
+  font-family: 'Pacifico', cursive;
+
+  /* ← change: make most text white */
+  color: #fff;
+}
+
+.search-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+
+  /* ← change: keep input text dark so it’s readable */
+  color: #000;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+}
+
+.autocomplete-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ddd;
+  border-top: none;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.autocomplete-list li {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.autocomplete-list li + li {
+  border-top: 1px solid #eee;
+}
+
+.autocomplete-list li:hover {
+  background: #f0f0f0;
+}
+
+mark {
+  background: yellow;
+}
+
+.history-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.chip, .chip-clear {
+  border: none;
+  border-radius: 1rem;
+  padding: 0.25rem 0.75rem;
+  cursor: pointer;
+}
+
+.chip {
+  background: #e0e0e0;
+}
+
+.chip:hover {
+  background: #c0c0c0;
+}
+
+.chip-clear {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+#search-btn {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+
+  /* ← inherits white text from #search-view */
+  background: #0070f3;
+  color: inherit;
+
+  cursor: pointer;
+}
+
+#search-btn:hover {
+  background: #005bb5;
+}
+
+#search-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.no-results {
+  margin-top: 1rem;
+
+  /* ← inherits white text */
+  color: inherit;
+}
+
+.results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.result-card {
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  text-align: center;
+  padding: 0.5rem;
+
+  /* ← ensure card text is white */
+  color: inherit;
+}
+
+.result-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.result-card h3 {
+  margin: 0.5rem 0 0 0;
+  font-size: 1rem;
+  /* ← lighter weight if you switch to Montserrat for certain elements: */
+  font-weight: 300;
+}

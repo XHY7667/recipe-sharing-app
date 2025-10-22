@@ -1,0 +1,123 @@
+/* src/views/ShoppingList.css */
+
+#shopping-list {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  font-family: sans-serif;
+
+  /* background image */
+  background-image: url('../assets/images/shoppinglist.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+#shopping-list h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+
+  /* Pacifico font & white text */
+  font-family: 'Pacifico', cursive;
+  color: #fff;
+}
+
+.empty {
+  text-align: center;
+  color: #666;
+  margin-top: 2rem;
+}
+
+/* Action buttons */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.actions button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #0070f3;
+  color: white;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+.actions button:hover {
+  background: #005bb5;
+}
+
+/* List styling */
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list li {
+  position: relative;            /* ← change: enable absolute children */
+  padding: 1rem 0.5rem;          /* ← change: increased top padding for space */
+  border-bottom: 1px solid #eee;
+  /* remove justify-content so flex-start is default */
+  display: flex;                 
+  align-items: flex-start;       /* ← change: align content at top */
+  color: #fff;                   /* white text for items */
+}
+
+/* ← change: pin checkbox at top-left */
+.list li input[type="checkbox"] {
+  position: absolute;
+  top: 1rem;     /* matches li’s top padding */
+  left: 0.5rem;  /* matches li’s side padding */
+  margin: 0;     /* reset default */
+}
+
+/* ← change: indent item name to clear the checkbox */
+.item-name {
+  margin-left: 2.5rem;  /* enough to clear the checkbox */
+  color: #fff;          /* ensure text is white */
+}
+
+/* ← change: pin remove button at top-right */
+.remove-btn {
+  position: absolute;
+  top: 1rem;             /* same vertical as checkbox */
+  right: 0.5rem;         /* matches li’s side padding */
+  background: transparent;
+  border: none;
+  color: #fff;           /* white “×” icon */
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.remove-btn:hover {
+  color: #900;
+}
+
+.list li.bought .item-name {
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.7);  /* lighter for bought items */
+}
+
+.list li:last-child {
+  border-bottom: none;
+}
+
+/* Print styles */
+@media print {
+  .actions, .remove-btn, input[type="checkbox"] {
+      display: none;
+  }
+  #shopping-list {
+      margin: 0;
+      padding: 0;
+  }
+  .list li {
+      border: none;
+      padding: 0.25rem 0;
+      position: static;      /* undo positioning for print */
+  }
+  .item-name {
+      margin-left: 0;        /* undo indent for print */
+      color: #000;           /* dark text for print */
+  }
+}

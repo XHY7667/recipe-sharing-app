@@ -1,0 +1,84 @@
+/* src/views/Random.css */
+
+/* Container */
+#random-view {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+  
+  /* Card & adjacent */
+  .random-card {
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  .random-card + .random-card {
+    margin-top: 1rem;
+  }
+  
+  /* Pseudo-element decorative icon */
+  .random-card::before {
+    content: '🥘';
+    display: block;
+    text-align: center;
+    font-size: 2rem;
+    margin: 0.5rem 0;
+  }
+  
+  /* Hover state */
+  .random-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  /* Image */
+  .random-card img {
+    width: 100%;
+    display: block;
+  }
+  
+  /* Content area */
+  .random-content {
+    padding: 1rem;
+  }
+  .random-content h2 {
+    margin-top: 0;
+  }
+  
+  /* First-letter pseudo-element in instructions */
+  .random-content .instructions::first-letter {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  /* Button */
+  #new-random-btn {
+    margin-top: 1.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: #0070f3;
+    color: white;
+    cursor: pointer;
+  }
+  #new-random-btn:hover {
+    background-color: #005bb5;
+  }
+  #new-random-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  /* Error styling */
+  .error-message {
+    color: #c00;
+    margin: 1rem 0;
+  }
+  
+  /* Responsive tweak */
+  @media (max-width: 600px) {
+    #random-view {
+      padding: 0.5rem;
+    }
+  }
+  

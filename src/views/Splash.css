@@ -1,0 +1,56 @@
+/* src/views/Splash.css */
+
+.splash-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .splash-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .splash-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+    padding: 0 1rem;
+  }
+  
+  /* Title: “Flog” */
+  .splash-title {
+    display: block;
+    font-family: 'Pacifico', cursive;
+    font-size: 6rem; /* extra large */
+    line-height: 1;
+    letter-spacing: 0.05em;
+  }
+  
+  /* Subtitle */
+  .splash-subtitle {
+    display: block;
+    font-family: 'Amatic SC', cursive;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    letter-spacing: 0.1em;
+  }
+  
+  /* Ensure responsive sizing */
+  @media (max-width: 480px) {
+    .splash-title {
+      font-size: 3rem;
+    }
+    .splash-subtitle {
+      font-size: 2rem;
+    }
+  }
+  

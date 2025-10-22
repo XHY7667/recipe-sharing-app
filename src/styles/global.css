@@ -1,0 +1,17 @@
+/* src/styles/global.css */
+
+/* Mobile-first box-sizing and reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  
+  #root, #app-root {
+    min-height: 100vh;
+  }
+  

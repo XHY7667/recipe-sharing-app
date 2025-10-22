@@ -1,0 +1,142 @@
+/* src/views/FilterByIngredient.css */
+
+/* Global box‐sizing reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Container */
+#filter-ingredient {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1rem;
+  font-family: sans-serif;
+
+  /* ← change: add background image */
+  background-image: url('../assets/images/Ingrediant.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* ← change: make “Pantry Picker” use the Pacifico font */
+#filter-ingredient h1 {
+  font-family: 'Pacifico', cursive;
+}
+
+/* ← change: set Pantry Picker and Shopping List titles to white */
+#filter-ingredient h1,
+#filter-ingredient h2 {
+  color: #fff;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;                /* Flex layout for alignment */
+  gap: 0.5rem;
+  align-items: center;
+}
+.search-bar input {
+  flex: 1;                      /* Input fills remaining space */
+  padding: 0.5rem;
+}
+.search-bar button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #0070f3;
+  color: white;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+.search-bar button:hover {
+  background: #005bb5;
+}
+.to-list {
+  margin-left: auto;
+  text-decoration: none;
+  color:  #fff;
+  font-weight: bold;
+}
+
+/* Meal Item */
+.meal-item {
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+.meal-header {
+  display: flex;                /* Flex container for header */
+  align-items: center;
+  padding: 0.5rem;
+  background: #fafafa;
+}
+.meal-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+.meal-link img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 0.25rem;
+  margin-right: 0.5rem;
+}
+
+/* Show Ingredients button wrapper */
+.show-btn-wrapper {
+  text-align: center;
+  padding: 0.5rem 0;
+}
+.show-ingredients-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #28a745;
+  color: white;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+.show-ingredients-btn:hover {
+  background: #1e7e34;
+}
+
+/* Ingredient List */
+.ingredient-list {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem;
+  background: #fff;
+}
+.ingredient-list li {
+  display: flex;                /* Use flex for each ingredient row */
+  align-items: center;
+  padding: 0.25rem 0;
+  border-bottom: 1px dashed #ddd;
+}
+.ingredient-list li:last-child {
+  border-bottom: none;
+}
+.ingredient-list input {
+  margin-right: 0.5rem;
+}
+.ing-name {
+  flex: 1;
+}
+.ing-meas {
+  font-style: italic;
+  margin-left: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .search-bar {
+    flex-direction: column;      /* Stack search elements on small screens */
+    align-items: stretch;
+  }
+  .meal-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

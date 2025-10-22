@@ -1,0 +1,37 @@
+/* src/views/FAQ.css */
+
+#faq-view {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1rem;
+  font-family: sans-serif;
+}
+
+#faq-view h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+dl {
+  border-top: 1px solid #ddd;
+}
+
+dt {
+  padding: 0.75rem 0;
+  font-weight: bold;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+dd {
+  padding: 0 0 0.75rem 1rem;
+  margin: 0;
+  color: #555;
+
+  /* ← change: honor newline characters so your last answer breaks onto new lines */
+  white-space: pre-line;
+}
+
+.faq-q:hover {
+  color: #0070f3;
+}

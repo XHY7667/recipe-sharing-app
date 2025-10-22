@@ -1,0 +1,99 @@
+/* src/views/FilterByCategory.css */
+
+/* Container */
+#filter-category {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+  font-family: sans-serif;
+
+  /* ← background image (unchanged from before) */
+  background-image: url('../assets/images/category.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* ← change: style the “Cuisine Curator” title */
+#filter-category h1 {
+  font-family: 'Pacifico', cursive;
+  color: #fff;                /* ← change: make title text white */
+}
+
+/* ← change: make the “0 recipes found” text white */
+#filter-category .no-results {
+  color: #fff;                /* ← change: white text for no-results */
+}
+
+/* Facet bar: horizontal scrollable chips */
+.facet-bar {
+  display: flex;
+  overflow-x: auto;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Custom scrollbar for facet bar */
+.facet-bar::-webkit-scrollbar {
+  height: 6px;
+}
+.facet-bar::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 3px;
+}
+
+/* Chips */
+.chip {
+  flex: 0 0 auto;
+  padding: 0.5rem 1rem;
+  border: 1px solid #0070f3;
+  border-radius: 1rem;
+  background: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.chip.selected {
+  background: #0070f3;
+  color: #fff;
+}
+
+/* Result grid */
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Recipe cards */
+.result-card {
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #eee;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.result-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.result-card img {
+  width: 100%;
+  display: block;
+}
+.result-card h3 {
+  margin: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .facet-bar {
+      flex-wrap: nowrap;
+  }
+  .result-grid {
+      grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,145 @@
+/* src/views/Dashboard.css */
+
+/* Import kitchen-style fonts */
+@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Montserrat:wght@300;400;700&display=swap');
+
+/* Dashboard grid container */
+#dashboard-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  background: #fafafa;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Base card styling */
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  min-height: 180px;
+  transition: filter 0.3s ease;
+}
+
+/* Background layer via pseudo-element */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(1.2);
+  transition: filter 0.3s ease;
+  z-index: 0;
+}
+
+/* Blur only the hovered card’s background */
+.card:hover::before {
+  filter: blur(4px) brightness(1);
+}
+
+/* Card content above the background */
+.card > * {
+  position: relative;
+  z-index: 1;
+  padding: 1rem;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Assign background images */
+.profile-card::before  { background-image: url('../assets/images/d1.png'); }
+.stats-card::before    { background-image: url('../assets/images/d2.png'); }
+.activity-card::before { background-image: url('../assets/images/d3.png'); }
+.rec-card::before      { background-image: url('../assets/images/d4.png'); }
+.shop-card::before     { background-image: url('../assets/images/d5.png'); }
+.comm-card::before     { background-image: url('../assets/images/d6.png'); }
+
+/* Heading styles */
+.profile-card h2,
+.activity-card h2,
+.rec-card h2,
+.shop-card h2,
+.comm-card h2 {
+  font-family: 'Merienda', cursive;
+  margin: 0 0 0.5rem;
+  font-size: 1.6rem;
+}
+
+/* Stats card layout */
+.stats-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem;
+}
+.stats-card .stat {
+  flex: 1 1 45%;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  text-align: center;
+}
+.stats-card .stat h3 {
+  margin: 0;
+  font-family: 'Merienda', cursive;
+  font-size: 2rem;
+}
+.stats-card .stat p {
+  margin: 0.25rem 0 0;
+}
+
+/* Recent activity list */
+.activity-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.activity-card li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Recommended recipes grid */
+.rec-card .rec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 0.5rem;
+}
+.rec-card .rec-item {
+  text-align: center;
+}
+.rec-card img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+/* Shopping list styling */
+.shop-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.shop-card li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+.shop-card input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* Community highlights */
+.comm-card .comm-item {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  font-size: 1rem;
+}

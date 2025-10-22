@@ -1,0 +1,122 @@
+/* src/views/RecipeDetail.css */
+
+#recipe-detail {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+#recipe-detail h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#recipe-detail img {
+  width: 100%;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Meta info */
+.meta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.meta-item {
+  font-size: 0.9rem;
+}
+
+/* Ingredients list */
+.ingredients ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ingredients li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0;
+  border-bottom: 1px dashed #ddd;
+}
+
+.ingredients li:last-child {
+  border-bottom: none;
+}
+
+.ingredient::before {
+  content: "• ";
+}
+
+.measure {
+  font-style: italic;
+}
+
+/* Instructions */
+.instructions {
+  margin-top: 2rem;
+}
+
+.instructions h2 {
+  margin-bottom: 0.5rem;
+}
+
+.instructions p {
+  line-height: 1.6;
+}
+
+/* Error styling */
+.error {
+  color: #c00;
+  text-align: center;
+}
+
+/* Like button */
+.like-btn {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #c00;
+  background: #fff;
+  color: #c00;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+.like-btn.liked {
+  background: #c00;
+  color: #fff;
+}
+
+.like-btn:hover {
+  opacity: 0.8;
+}
+
+/* purchase button */
+.purchase {
+   margin: 16px 0; 
+}
+
+.buy-btn 
+{ padding: 8px 14px; 
+  font-weight: 600;
+}
+
+.order-status.paid { 
+  color: #0a7f30; 
+}
+
+.order-status.failed { 
+  color: #c0392b; 
+}
+
+
+/* Responsive */
+@media (max-width: 600px) {
+  .meta {
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,0 +1,100 @@
+/* src/views/Submit.css */
+
+/* Container */
+#submit-view {
+  position: relative;      /* allow blurred bg behind content */
+  overflow: hidden;        
+  max-width: 600px;
+  margin: 2rem auto;
+  font-family: sans-serif;
+
+  /* ← change: make all text in this container white */
+  color: #fff;
+}
+
+/* ← change: blurred background image */
+#submit-view::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('../assets/images/submitrecipe.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  filter: blur(8px);
+  z-index: -1;            /* sit behind form */
+}
+
+/* ← change: Submit Recipe / Edit Recipe title style */
+#submit-view h1 {
+  font-family: 'Pacifico', cursive;
+  color: inherit;         /* white */
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Form layout */
+#submit-view form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Labels */
+#submit-view label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  color: inherit;         /* white */
+}
+
+/* Inputs & textarea */
+#submit-view input,
+#submit-view textarea {
+  padding: 0.5rem;
+  font-size: 1rem;
+
+  /* ← change: keep user‐entered text readable (black on white) */
+  color: #000;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+/* Placeholder text */
+#submit-view input::placeholder,
+#submit-view textarea::placeholder {
+  color: #666;
+}
+
+/* Fieldset */
+#submit-view fieldset {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  color: inherit;         /* legend text white, if used */
+}
+
+/* Image preview */
+#submit-view .preview img {
+  max-width: 100%;
+  border-radius: 0.5rem;
+}
+
+/* Buttons */
+#submit-view button {
+  padding: 0.75rem;
+  border: none;
+  background: #2859a7;
+  color: inherit;         /* white */
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+#submit-view button:hover {
+  background: #217c88;
+}
+
+/* Error message */
+#submit-view .error {
+  color: inherit;         /* white (overrides previous red) */
+}

@@ -1,0 +1,22 @@
+/* src/components/Nav.css */
+.nav-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: #fafafa;
+    border-bottom: 1px solid #ddd;
+  }
+  .nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+  }
+  .nav-link:hover {
+    color: #0070f3;
+  }
+  .nav-link.active {
+    border-bottom: 2px solid #0070f3;
+  }
+  

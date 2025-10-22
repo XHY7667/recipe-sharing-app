@@ -1,0 +1,45 @@
+/* src/views/Favorites.css */
+#favorites-view {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+    font-family: sans-serif;
+  }
+  
+  .fav-group {
+    margin-bottom: 2rem;
+  }
+  
+  .fav-group h2 {
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #0070f3;
+    padding-bottom: 0.25rem;
+  }
+  
+  .fav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  
+  .fav-card {
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #eee;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+  .fav-card:hover {
+    transform: scale(1.05);
+  }
+  .fav-card img {
+    width: 100%;
+    display: block;
+  }
+  .fav-card h3 {
+    margin: 0.5rem;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  
