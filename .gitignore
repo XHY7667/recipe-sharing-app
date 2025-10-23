@@ -1,0 +1,21 @@
+﻿# Dependencies & caches
+node_modules/
+.npm/
+.pnpm-store/
+.yarn/
+.yarn-cache/
+.cache/
+.vite/
+.tmp/
+.temp/
+
+# Builds
+dist/
+build/
+
+# Env & logs
+.env
+.env.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
